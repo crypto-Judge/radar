@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>即時資金雷達 - Smart Money Radar｜即時追蹤台股資金流向</title>
-<meta name="description" content="即時資金雷達 — 掌握台灣股市每一筆資金動向，讓你搶先市場一步。">
+<meta name="description" content="即時資金雷達 — 資金流向、融資維持率、個股撐壓位，掌握台股三大關鍵，讓你搶先市場一步。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Bebas+Neue&display=swap" rel="stylesheet">
 <style>
@@ -175,10 +175,25 @@
   .hero-sub {
     font-size: clamp(1rem, 2.2vw, 1.25rem);
     color: var(--text-muted);
-    max-width: 560px;
+    max-width: 620px;
     line-height: 1.75;
-    margin-bottom: 48px;
+    margin-bottom: 20px;
   }
+
+  .hero-pillars {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-bottom: 44px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    color: var(--gold);
+  }
+
+  .hero-pillars i { font-style: normal; color: var(--text-muted); font-weight: 400; }
 
   .hero-btns {
     display: flex;
@@ -289,6 +304,17 @@
     max-width: 580px;
   }
 
+  .inline-link {
+    color: var(--gold);
+    text-decoration: none;
+    font-size: 0.92rem;
+    font-weight: 700;
+    border-bottom: 1px solid rgba(245,200,66,0.35);
+    transition: border-color 0.2s;
+  }
+
+  .inline-link:hover { border-bottom-color: var(--gold); }
+
   /* ── FEATURES ── */
   .features {
     padding: 100px 0;
@@ -330,6 +356,20 @@
   .feature-card:hover { border-color: rgba(245,200,66,0.5); transform: translateY(-4px); }
   .feature-card:hover::before { opacity: 1; }
 
+  .feature-card.is-new { border-color: rgba(245,200,66,0.45); }
+
+  .new-tag {
+    position: absolute;
+    top: 20px; right: 20px;
+    background: var(--gold);
+    color: #000;
+    font-size: 0.62rem;
+    font-weight: 900;
+    letter-spacing: 0.14em;
+    padding: 3px 10px;
+    border-radius: 100px;
+  }
+
   .feature-icon {
     width: 52px;
     height: 52px;
@@ -364,13 +404,13 @@
 
   .stats-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
     gap: 0;
     text-align: center;
   }
 
   .stat-item {
-    padding: 32px 24px;
+    padding: 32px 18px;
     border-right: 1px solid var(--border);
   }
 
@@ -783,6 +823,7 @@
   <ul class="nav-links">
     <li><a href="#features">功能特色</a></li>
     <li><a href="#how">使用方式</a></li>
+    <li><a href="guide.html">使用教學</a></li>
     <li><a href="#pricing">訂閱方案</a></li>
   </ul>
   <a class="nav-cta" href="#pricing">立即下載</a>
@@ -806,6 +847,10 @@
     即時資金雷達整合台股全市場資金動態，<br>
     讓你在市場主力行動前，搶先一步出擊。
   </p>
+
+  <div class="hero-pillars">
+    <span>資金流向</span><i>×</i><span>融資籌碼</span><i>×</i><span>撐壓價位</span>
+  </div>
 
   <div class="hero-btns">
     <a href="https://play.google.com/store/apps/details?id=com.judge.stockflowapp" class="btn-primary" target="_blank">📱 Google Play 下載</a>
@@ -855,7 +900,7 @@
       <p class="section-label">功能特色</p>
       <h2 class="section-title">你需要的<br>全部都在這裡</h2>
       <p class="section-desc">
-        從即時資金追蹤、類股排行到個股監控，一站式掌握台灣股市脈動。
+        資金往哪裡去、融資籌碼有沒有危險、關鍵價位在哪裡 —— 台股三大關鍵，一個 App 全部掌握。
       </p>
     </div>
 
@@ -863,32 +908,34 @@
       <div class="feature-card">
         <div class="feature-icon">⚡</div>
         <h3>即時資金流向</h3>
-        <p>盤中每5分鐘更新一次全市場資金動態，超過1,900檔個股即時監控，資金異動超過門檻即時推播通知。</p>
+        <p>盤中每5分鐘更新一次全市場資金動態，1,947檔個股即時監控，資金異動超過門檻即時推播通知。</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon">📡</div>
-        <h3>類股雷達掃描</h3>
-        <p>依TWSE/TPEx官方產業分類，即時彙整各類股資金淨流入/流出，一眼看出熱門板塊輪動方向。</p>
+        <h3>類股雷達與排行</h3>
+        <p>依TWSE/TPEx官方產業分類彙整30+類股資金淨流入／流出，並提供當日資金流入流出前50名個股排行，一眼看出板塊輪動方向。</p>
       </div>
-      <div class="feature-card">
-        <div class="feature-icon">🏆</div>
-        <h3>每日資金排行榜</h3>
-        <p>即時更新當日資金流入/流出前50名個股排行，搭配K線圖快速識別趨勢，掌握主力動向。</p>
+      <div class="feature-card is-new">
+        <span class="new-tag">NEW</span>
+        <div class="feature-icon">📉</div>
+        <h3>融資維持率</h3>
+        <p>上市櫃整體維持率、警戒檔數與融資餘額增減一次掌握。個股可查維持率、距警戒距離與當日融資增減，避開逼近追繳線的危險籌碼。</p>
+      </div>
+      <div class="feature-card is-new">
+        <span class="new-tag">NEW</span>
+        <div class="feature-icon">⚖️</div>
+        <h3>個股撐壓位</h3>
+        <p>每日自動產生壓力位、交界位、支撐位三道波動參考線，開盤前就固定不變動。盤中觸及自動記錄並附上量能，讓你提前擬好交易計畫。</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon">🔔</div>
         <h3>智慧推播提醒</h3>
-        <p>系統內建偵測條件，資金異動訊號自動觸發推播通知，無需手動設定，不再錯過任何重要機會。</p>
+        <p>系統內建偵測條件，資金異動與價位觸及訊號自動觸發推播通知，無需手動設定，不再錯過任何重要機會。</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon">🔍</div>
         <h3>個股訊號搜尋</h3>
         <p>輸入股票代號或名稱，即時查看該股當日資金流入／流出訊號、流入金額與漲跌幅，掌握主力動向。</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">🌐</div>
-        <h3>跨平台同步</h3>
-        <p>iOS、Android 雙平台同步，讓你隨時隨地掌握市場，無論手機或平板都能即時查看。</p>
       </div>
     </div>
   </div>
@@ -907,8 +954,12 @@
         <div class="stat-label">盤中更新頻率</div>
       </div>
       <div class="stat-item">
-        <div class="stat-num">30+</div>
-        <div class="stat-label">產業類股分類</div>
+        <div class="stat-num">1,224<span style="font-size:1.5rem;">檔</span></div>
+        <div class="stat-label">融資籌碼監控</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">3<span style="font-size:1.5rem;">道</span></div>
+        <div class="stat-label">每日撐壓參考位</div>
       </div>
       <div class="stat-item">
         <div class="stat-num">100<span style="font-size:1.5rem;">億+</span></div>
@@ -930,6 +981,13 @@
         <div style="flex:0 0 260px;"><img src="screenshot3.jpg" alt="題材產業分類" style="width:100%; border-radius:24px; box-shadow:0 8px 40px rgba(0,0,0,0.6);"></div>
         <div style="flex:0 0 260px;"><img src="screenshot4.jpg" alt="即時雷達掃描" style="width:100%; border-radius:24px; box-shadow:0 8px 40px rgba(0,0,0,0.6);"></div>
         <div style="flex:0 0 260px;"><img src="screenshot5.jpg" alt="每日資金排行" style="width:100%; border-radius:24px; box-shadow:0 8px 40px rgba(0,0,0,0.6);"></div>
+
+        <!-- ▼▼ 上傳 screenshot6.jpg（融資維持率）與 screenshot7.jpg（撐壓位）後，
+                把下面兩行的註解拿掉，並將下方 script 裡的 total=5 改成 total=7，
+                同時在圓點區多加兩個 <span class="sdot" onclick="goShot(5)"> 與 goShot(6) ▼▼
+        <div style="flex:0 0 260px;"><img src="screenshot6.jpg" alt="融資維持率" style="width:100%; border-radius:24px; box-shadow:0 8px 40px rgba(0,0,0,0.6);"></div>
+        <div style="flex:0 0 260px;"><img src="screenshot7.jpg" alt="個股撐壓位" style="width:100%; border-radius:24px; box-shadow:0 8px 40px rgba(0,0,0,0.6);"></div>
+        -->
       </div>
     </div>
     <div style="display:flex; justify-content:center; gap:12px; margin-top:32px; align-items:center;">
@@ -946,9 +1004,9 @@
       <span style="color:#555;">|</span>
       <span style="color:#C88600; font-size:0.85rem;">📊 1947檔個股監控</span>
       <span style="color:#555;">|</span>
-      <span style="color:#C88600; font-size:0.85rem;">🎯 題材產業分類30+</span>
+      <span style="color:#C88600; font-size:0.85rem;">📉 融資維持率</span>
       <span style="color:#555;">|</span>
-      <span style="color:#C88600; font-size:0.85rem;">📈 每日資金排行</span>
+      <span style="color:#C88600; font-size:0.85rem;">⚖️ 個股撐壓位</span>
     </div>
   </div>
 </section>
@@ -982,13 +1040,14 @@
         <h2 class="section-title">4步驟<br>開始追蹤資金</h2>
         <p class="section-desc">
           簡單上手，讓複雜的市場資料變得直觀易懂。
+          <br><a href="guide.html" class="inline-link">看完整使用教學 →</a>
         </p>
         <div class="steps">
           <div class="step">
             <div class="step-num">01</div>
             <div class="step-content">
               <h4>下載安裝</h4>
-              <p>從 Google Play 或 App Store 下載即時資金雷達，完成帳號註冊即可開始使用。</p>
+              <p>從 Google Play 或 App Store 下載即時資金雷達，開啟後直接使用，不需要註冊帳號。</p>
             </div>
           </div>
           <div class="step">
@@ -1013,8 +1072,9 @@
           <div class="step">
             <div class="step-num">04</div>
             <div class="step-content">
-              <h4>搜尋個股查看訊號</h4>
-              <p>輸入股票代號或名稱，即時查看該股當日是否出現資金流入／流出訊號，掌握主力動向。</p>
+              <h4>確認籌碼與關鍵價位</h4>
+              <p>進場前再多看兩眼：切到「融資」確認維持率離追繳線還有多遠，再到「撐壓位」看壓力位、交界位與支撐位。<br>
+              籌碼安全、價位清楚，才知道停損停利該擺在哪。</p>
             </div>
           </div>
         </div>
@@ -1086,7 +1146,7 @@
       <p class="section-label">訂閱方案</p>
       <h2 class="section-title">選擇適合你的方案</h2>
       <p class="section-desc">
-        選擇適合的方案，解鎖全市場即時資金資料、個股訊號搜尋與進階分析工具。
+        三種方案功能完全相同，差別只在期間長度。解鎖全市場即時資金資料、融資籌碼監控與每日撐壓位。
       </p>
     </div>
 
@@ -1100,6 +1160,8 @@
           <li>盤中每5分鐘即時推播訊號</li>
           <li>個股當日資金訊號搜尋</li>
           <li>類股資金輪動追蹤</li>
+          <li>融資維持率與警示清單</li>
+          <li>每日個股撐壓位</li>
           <li>無限制推播通知</li>
         </ul>
         <a href="#" class="plan-btn outline">立即訂閱</a>
@@ -1115,6 +1177,8 @@
           <li>盤中每5分鐘即時推播訊號</li>
           <li>個股當日資金訊號搜尋</li>
           <li>類股資金輪動追蹤</li>
+          <li>融資維持率與警示清單</li>
+          <li>每日個股撐壓位</li>
           <li>無限制推播通知</li>
         </ul>
         <a href="#" class="plan-btn gold">立即訂閱</a>
@@ -1129,6 +1193,8 @@
           <li>盤中每5分鐘即時推播訊號</li>
           <li>個股當日資金訊號搜尋</li>
           <li>類股資金輪動追蹤</li>
+          <li>融資維持率與警示清單</li>
+          <li>每日個股撐壓位</li>
           <li>無限制推播通知</li>
         </ul>
         <a href="#" class="plan-btn outline">立即訂閱</a>
@@ -1171,6 +1237,7 @@
       <div class="footer-brand">⚡ 即時資金雷達</div>
       <ul class="footer-links">
         <li><a href="#features">功能介紹</a></li>
+        <li><a href="guide.html">使用教學</a></li>
         <li><a href="#pricing">訂閱方案</a></li>
         <li><a href="https://crypto-judge.github.io/privacy-policy/" target="_blank">隱私政策</a></li>
         <li><a href="mailto:cryptojudge101@gmail.com">聯絡我們</a></li>
@@ -1186,7 +1253,7 @@
         公開開放資料，依「<a href="https://data.gov.tw/license" target="_blank">政府資料開放授權條款－第1版</a>」授權使用。
       </p>
       <p class="footer-disclaimer-text">
-        本服務所提供之分析結果為衍生創作，僅供投資研究參考，不構成任何投資建議。投資人應自行審慎評估投資風險，所衍生之一切盈虧均由使用者自行承擔。
+        本服務所提供之分析結果為衍生創作，僅供投資研究參考，不構成任何投資建議。App 內所示之撐壓位為波動參考位，非進出場訊號。投資人應自行審慎評估投資風險，所衍生之一切盈虧均由使用者自行承擔。
       </p>
     </div>
 
@@ -1196,7 +1263,6 @@
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
 <script>
   // Scroll reveal
   const reveals = document.querySelectorAll('.reveal');
