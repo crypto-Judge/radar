@@ -982,7 +982,9 @@
         <div style="flex:0 0 260px;"><img src="screenshot4.jpg" alt="即時雷達掃描" style="width:100%; border-radius:24px; box-shadow:0 8px 40px rgba(0,0,0,0.6);"></div>
         <div style="flex:0 0 260px;"><img src="screenshot5.jpg" alt="每日資金排行" style="width:100%; border-radius:24px; box-shadow:0 8px 40px rgba(0,0,0,0.6);"></div>
 
-        <div style="flex:0 0 260px;"><img src="screenshot6.jpg" alt="融資維持率與警示清單" style="width:100%; border-radius:24px; box-shadow:0 8px 40px rgba(0,0,0,0.6);"></div>
+        <div style="flex:0 0 260px;"><img src="screenshot6.jpg" alt="融資維持率大盤概況" style="width:100%; border-radius:24px; box-shadow:0 8px 40px rgba(0,0,0,0.6);"></div>
+        <div style="flex:0 0 260px;"><img src="screenshot9.jpg" alt="個股融資維持率與歷史走勢" style="width:100%; border-radius:24px; box-shadow:0 8px 40px rgba(0,0,0,0.6);"></div>
+        <div style="flex:0 0 260px;"><img src="screenshot10.jpg" alt="融資維持率警示清單" style="width:100%; border-radius:24px; box-shadow:0 8px 40px rgba(0,0,0,0.6);"></div>
         <div style="flex:0 0 260px;"><img src="screenshot7.jpg" alt="個股撐壓位觸及" style="width:100%; border-radius:24px; box-shadow:0 8px 40px rgba(0,0,0,0.6);"></div>
         <div style="flex:0 0 260px;"><img src="screenshot8.jpg" alt="壓力位、交界位、支撐位查詢" style="width:100%; border-radius:24px; box-shadow:0 8px 40px rgba(0,0,0,0.6);"></div>
       </div>
@@ -997,6 +999,8 @@
       <span class="sdot" onclick="goShot(5)" style="width:8px;height:8px;border-radius:50%;background:#333;display:inline-block;cursor:pointer;"></span>
       <span class="sdot" onclick="goShot(6)" style="width:8px;height:8px;border-radius:50%;background:#333;display:inline-block;cursor:pointer;"></span>
       <span class="sdot" onclick="goShot(7)" style="width:8px;height:8px;border-radius:50%;background:#333;display:inline-block;cursor:pointer;"></span>
+      <span class="sdot" onclick="goShot(8)" style="width:8px;height:8px;border-radius:50%;background:#333;display:inline-block;cursor:pointer;"></span>
+      <span class="sdot" onclick="goShot(9)" style="width:8px;height:8px;border-radius:50%;background:#333;display:inline-block;cursor:pointer;"></span>
       <button onclick="slideShot(1)" style="background:#1E2A4A; border:1px solid #C88600; color:#C88600; width:44px; height:44px; border-radius:50%; font-size:1.4rem; cursor:pointer; line-height:1;">›</button>
     </div>
     <div style="display:flex; justify-content:center; gap:16px; margin-top:24px; flex-wrap:wrap;">
@@ -1012,7 +1016,7 @@
 </section>
 <script>
 (function(){
-  var cur=0, total=8, iw=280;
+  var cur=0, total=10, iw=280;
   function update(){
     var track=document.getElementById('screenshotTrack');
     var cw=track.parentElement.offsetWidth;
