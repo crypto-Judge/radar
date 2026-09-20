@@ -7,7 +7,7 @@
 <meta name="description" content="即時資金雷達使用教學:資金流向、融資維持率、撐壓位、個股搜尋與推播通知的完整說明。">
 
 <meta property="og:title" content="即時資金雷達 — 使用教學">
-<meta property="og:description" content="五個分頁一次看懂。盤中每5分鐘掃描全市場1,947檔個股,資金異動自動推播。">
+<meta property="og:description" content="六個分頁一次看懂。盤中每5分鐘掃描全市場2,525檔個股,資金異動自動推播。">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://crypto-judge.github.io/radar/guide.html">
 <meta property="og:image" content="https://crypto-judge.github.io/radar/banner.jpg">
@@ -225,10 +225,10 @@ footer{padding:36px 0 20px;border-top:1px solid var(--line);color:var(--muted);f
 .disclaimer p{margin:0 0 10px}
 .copy{text-align:center}
 
-/* ---------- 底部分頁列(對應 App 的五個分頁) ---------- */
+/* ---------- 底部分頁列(對應 App 的六個分頁) ---------- */
 .tabbar{position:fixed;left:0;right:0;bottom:0;z-index:50;background:rgba(11,17,32,.93);backdrop-filter:blur(14px);border-top:1px solid var(--line)}
 .tabbar-inner{max-width:var(--maxw);margin:0 auto;display:flex;padding:8px 6px calc(8px + env(safe-area-inset-bottom))}
-.tab{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;padding:6px 2px;color:var(--muted);font-size:11px;text-align:center;transition:color .18s ease}
+.tab{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;padding:6px 1px;color:var(--muted);font-size:10px;text-align:center;transition:color .18s ease;white-space:nowrap}
 .tab:hover{text-decoration:none;color:var(--text)}
 .tab.active{color:var(--amber)}
 .tab svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
@@ -266,11 +266,11 @@ footer{padding:36px 0 20px;border-top:1px solid var(--line);color:var(--muted);f
 <header class="hero">
   <div class="wrap">
     <div class="eyebrow">使用教學</div>
-    <h1>五個分頁<br>看懂<span>即時資金雷達</span></h1>
-    <p>資金往哪裡去、融資籌碼有沒有危險、哪些股票碰到關鍵價位——一個 App 全部掌握。</p>
+    <h1>六個分頁<br>看懂<span>即時資金雷達</span></h1>
+    <p>資金往哪裡去、它屬於哪個族群、關鍵價位在哪、誰在買、法人怎麼動、籌碼安不安全——六個角度看同一檔股票。</p>
     <div class="pulse">
       <span class="dot"></span>
-      <span>盤中每 <span class="mono">5</span> 分鐘掃描全市場 <span class="mono">1,947</span> 檔個股</span>
+      <span>盤中每 <span class="mono">5</span> 分鐘掃描全市場 <span class="mono">2,525</span> 檔個股</span>
     </div>
   </div>
 </header>
@@ -444,11 +444,72 @@ footer{padding:36px 0 20px;border-top:1px solid var(--line);color:var(--muted);f
   </div>
 </section>
 
-<!-- ========== 分頁三:撐壓位 ========== -->
-<section id="levels">
+<!-- ========== 分頁三:法人 ========== -->
+<section id="inst">
   <div class="sec-head">
     <div class="sec-tag">分頁 03</div>
-    <h2>撐壓位<span class="newtag">NEW</span></h2>
+    <h2>法人<span class="newtag">NEW</span></h2>
+    <p>三大法人買賣超依題材聚合,看資金在布局哪些族群。</p>
+  </div>
+
+  <div class="card">
+    <h3>題材排行</h3>
+    <p class="lead">把外資、投信、自營商的買賣超,依自訂題材加總後排序。</p>
+
+    <div class="demo" aria-label="法人題材排行示意">
+      <div class="demo-bar"><span>近 20 日 &middot; 持續加碼</span><span class="mono">單位:億</span></div>
+      <div class="touch res">
+        <div><div class="t-name">液冷散熱</div><div class="t-sub">12 檔 &nbsp; 買超 16/20 日</div></div>
+        <div class="t-right"><div class="t-price up">+464.7</div><div class="t-pct">外 330 &nbsp; 投 146</div></div>
+      </div>
+      <div class="touch res">
+        <div><div class="t-name">散熱模組</div><div class="t-sub">8 檔 &nbsp; 買超 14/20 日</div></div>
+        <div class="t-right"><div class="t-price up">+416.7</div><div class="t-pct">外 261 &nbsp; 投 168</div></div>
+      </div>
+      <div class="touch res">
+        <div><div class="t-name">HDI</div><div class="t-sub">3 檔 &nbsp; 買超 14/20 日</div></div>
+        <div class="t-right"><div class="t-price up">+299.5</div><div class="t-pct">外 425 &nbsp; 投 -120</div></div>
+      </div>
+      <div class="touch sup">
+        <div><div class="t-name">ABF載板</div><div class="t-sub">4 檔 &nbsp; 買超 4/20 日</div></div>
+        <div class="t-right"><div class="t-price down">-183.2</div><div class="t-pct">外 -147 &nbsp; 投 -31</div></div>
+      </div>
+      <div class="demo-note">畫面示意,非即時資料</div>
+    </div>
+
+    <ul>
+      <li><b>分成三組:</b>持續加碼(淨買超且買超天數過半)、由買轉賣(整體仍是買超但最近兩日轉賣)、持續減碼(淨賣超且買超天數偏低)。<b>「由買轉賣」對短線最有意義</b>——那是加碼段結束的訊號。</li>
+      <li><b>期間切換:</b>當日、近 5 日、近 20 日。<b>預設看 20 日</b>——法人的動作本來就慢,5 日的買超天數多半是雜訊,20 日買超 16/20 這種持續性才叫明確。</li>
+      <li><b>外資與投信分開看:</b>兩者動機不同,投信有作帳壓力、外資看的是趨勢部位。上表的 HDI 就是例子:外資買 425 億、投信賣 120 億,<b>合計數字會把這種分歧蓋掉</b>。</li>
+      <li><b>以金額計價:</b>不是張數。同樣一千張,2,000 元的股票和 20 元的差一百倍,金額對高低價股才是同一把尺。</li>
+      <li><b>買超天數:</b>「16/20 日」代表 20 個交易日裡有 16 天是買超。這個比單日金額更能看出是不是有計畫地布局。</li>
+    </ul>
+
+    <div class="tip">
+      <b>資料時點:</b>法人買賣超是收盤後公布的,所以這個分頁的資料永遠比盤中晚一天。這不是缺點——它回答的是「昨天誰進場」,正好跟盤中的資金流向互補。
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>點進題材看成分股</h3>
+    <ul>
+      <li><b>誰把資金帶進來:</b>列出題材裡每一檔的法人買賣超、買超天數與當日漲跌,可看出是整個族群都被買,還是集中在一兩檔。</li>
+      <li><b>買超集中度:</b>畫面會標出「前二檔佔 X%」。<b>集中代表法人在挑個股,分散代表在買整個族群</b>,兩種情況的跟進方式不同。</li>
+      <li><b>漲停標示:</b>成分股當日漲停會以淡紅底標示、跌停淡綠底,不用逐一看漲跌幅。</li>
+      <li><b>個股查詢:</b>分頁上方可直接搜尋個股,查它的逐日買賣超(外資、投信、自營分列)與所屬題材,點題材又能跳回族群視角。</li>
+    </ul>
+
+    <div class="tip">
+      <b>實戰用法:</b>看到某個題材在「持續加碼」組,點進去確認是集中還是分散。如果買超集中在一兩檔而那幾檔你沒有,那這個題材的訊號對你的持股未必適用。
+    </div>
+  </div>
+</section>
+
+<!-- ========== 分頁四:撐壓位 ========== -->
+<section id="levels">
+  <div class="sec-head">
+    <div class="sec-tag">分頁 04</div>
+    <h2>撐壓位</h2>
     <p>每天自動算出三個關鍵價位,盤中碰到就記錄下來。</p>
   </div>
 
@@ -513,44 +574,133 @@ footer{padding:36px 0 20px;border-top:1px solid var(--line);color:var(--muted);f
     </div>
 
     <ul>
-      <li><b>左邊色條:</b>紅色代表觸及壓力位、綠色代表觸及支撐位,不用看文字就能分辨方向。</li>
-      <li><b>時間戳記:</b>觸及發生的時刻。開盤沒多久就觸及壓力位、而且之後價格站得住,通常比尾盤才碰到的更有續航力。</li>
-      <li><b>成交量:</b>每筆都附上當下的累計量。<b>有量才算數</b>——同樣是碰到壓力位,量能明顯放大的那檔,參考價值比量縮的高很多。</li>
-      <li><b>點進去:</b>可以看到該股完整的三個價位與當日資訊。</li>
-      <li><b>已濾除雜訊:</b>系統會自動排除成交量過低的個股,不會讓冷門股洗版你的列表。</li>
+      <li><b>六種穿越:</b>三條線各有兩個方向——<b>突破壓力 / 跌破壓力 / 跌破支撐 / 突破支撐 / 上穿交界 / 下穿交界</b>。跌破支撐後又站回來,跟單純跌破的意義完全不同,所以分開記錄。</li>
+      <li><b>顏色:</b>壓力類一律紅色、支撐類一律綠色、交界類橘色。<b>顏色代表是哪一條線,方向由文字說明</b>,不用同時記兩套編碼。</li>
+      <li><b>判定的是穿越不是接近:</b>要上一輪在點位一側、這一輪在另一側才算。價格一直在點位上方徘徊不會重複記錄。掃描每 3 分鐘一輪,快速來回的穿越可能抓不到。</li>
+      <li><b>時間戳記:</b>穿越發生的時刻。開盤沒多久就突破壓力、而且之後價格站得住,通常比尾盤才碰到的更有續航力。</li>
+      <li><b>成交量:</b>每筆都附上當下的累計量。<b>有量才算數</b>——同樣是突破壓力,量能明顯放大的那檔,參考價值比量縮的高很多。</li>
+      <li><b>篩選:</b>可依壓力、支撐、交界三類篩選,按鈕上的數字是該類今日的筆數。</li>
+      <li><b>已濾除雜訊:</b>共用清單會排除成交量過低的個股,不會讓冷門股洗版。</li>
+      <li><b>每日清除:</b>觸及紀錄在隔日換日時清空,只呈現當日。</li>
     </ul>
 
     <div class="tip">
       <b>怎麼解讀:</b>觸及只代表「價格到了」,不是買賣訊號——App 裡也標明是<b>波動參考位</b>。碰到支撐可能是進場點,也可能是跌破前的最後一站。建議搭配同一時間的資金流向一起看:碰到壓力位、同時該股又出現資金流入,才是比較完整的訊號。
     </div>
   </div>
-</section>
-
-<!-- ========== 分頁四:搜尋 ========== -->
-<section id="search">
-  <div class="sec-head">
-    <div class="sec-tag">分頁 04</div>
-    <h2>搜尋</h2>
-    <p>直接查單一檔股票的當日資金訊號。</p>
-  </div>
 
   <div class="card">
+    <h3>我的追蹤<span class="newtag">NEW</span></h3>
+    <p class="lead">自己挑的個股,碰到點位就通知,不看成交量。</p>
+
     <ul>
-      <li><b>搜尋方式:</b>輸入股票代號或名稱都可以,例如「2330」或「台積電」。上市(TWSE)與上櫃(TPEx)共 1,947 檔都涵蓋。</li>
-      <li><b>當日資訊:</b>顯示該股當日是否出現資金流入/流出訊號、累計金額,以及現價與漲跌幅。</li>
-      <li><b>歷史軌跡:</b>下方列出近期每日的資金進出紀錄。連續三天以上同方向,通常比單日大額進出更有參考價值。</li>
+      <li><b>怎麼加入:</b>查詢個股後點右上角星號,或在資金流向的個股排行直接點星號。名單存在伺服器,換頁不會不見。</li>
+      <li><b>不設量能門檻:</b>共用的觸及清單有 8,000 張的成交量條件以減少雜訊;<b>追蹤名單沒有</b>——你主動追蹤就表示你要知道,不需要系統代為判斷值不值得通知。</li>
+      <li><b>六種穿越全都通知:</b>壓力、支撐、交界三條線的兩個方向都會推播。</li>
+      <li><b>通知開關:</b>分頁上方可一鍵開關。預設關閉,因為不設量能門檻的通知會比較頻繁,由你自己決定要不要開。</li>
+      <li><b>同一檔同一側一天一次:</b>價格在點位附近來回不會重複洗頻。</li>
+      <li><b>上限 50 檔:</b>追蹤標的掃描時要繞過量能門檻,數量過多會拖慢整體掃描。</li>
     </ul>
 
     <div class="tip">
-      <b>注意:</b>資金流向是依成交價量推估的方向性指標,不等於法人買賣超。兩者可能不同步,建議搭配著看。
+      <b>沒有點位的情況:</b>前一日漲停鎖死的個股,最高等於最低等於收盤,振幅為零,算出來的三條線會全部等於收盤價,沒有參考價值,所以那些股票隔天不會有點位也不會有通知。
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>隔日沖買超<span class="newtag">NEW</span></h3>
+    <p class="lead">漲停鎖死的個股,是哪些分點在買。</p>
+
+    <div class="demo" aria-label="隔日沖買超示意">
+      <div class="demo-bar"><span>隔日沖買超 &middot; 2026-09-17</span><span class="mono">4 檔</span></div>
+      <div class="touch res">
+        <div><div class="t-name">4916 事欣科</div><div class="t-sub">買超 2,287 張 / 成交 4,563 張</div></div>
+        <div class="t-right"><div class="t-price up">50.1%</div></div>
+      </div>
+      <div class="touch res">
+        <div><div class="t-name">2493 揚博</div><div class="t-sub">買超 1,257 張 / 成交 3,896 張</div></div>
+        <div class="t-right"><div class="t-price up">32.3%</div></div>
+      </div>
+      <div class="touch res">
+        <div><div class="t-name">6620 漢達</div><div class="t-sub">買超 635 張 / 成交 2,033 張</div></div>
+        <div class="t-right"><div class="t-price up">31.2%</div></div>
+      </div>
+      <div class="demo-note">籌碼觀察用,非進出場訊號</div>
+    </div>
+
+    <ul>
+      <li><b>條件:</b>當日漲停鎖死、且隔日沖分點合計買超達門檻。點開可看是哪幾家分點、各買多少張。</li>
+      <li><b>佔比:</b>隔日沖買超佔該股當日成交量的比例。<b>佔比高代表這檔的成交有相當比例來自隔日沖</b>,隔天賣壓的來源比較清楚。</li>
+      <li><b>分點怎麼判定:</b>依近 60 日的出清率(買進後隔日賣出的比例)與平均持有天數自動判定,不是人工圈選的固定名單,會隨市場輪動更新。</li>
+      <li><b>更新時間:</b>收盤後 19:00 產出。<b>名單是給隔天看的</b>——隔日沖是今天買、明天賣,今天顯示的名單,明天才是他們的出場日。</li>
+    </ul>
+
+    <div class="tip">
+      <b>怎麼解讀:</b>這是籌碼結構的描述,<b>不預測隔天走勢</b>。知道有大量隔日沖籌碼,代表開盤可能有集中的賣壓,但賣壓會不會被承接是另一回事。
     </div>
   </div>
 </section>
 
-<!-- ========== 分頁五:設定與推播 ========== -->
-<section id="settings">
+<!-- ========== 分頁五:產業搜尋 ========== -->
+<section id="search">
   <div class="sec-head">
     <div class="sec-tag">分頁 05</div>
+    <h2>產業搜尋<span class="newtag">NEW</span></h2>
+    <p>查一檔股票,看見它所屬的族群與整條供應鏈。</p>
+  </div>
+
+  <div class="card">
+    <h3>個股的三層分類</h3>
+    <p class="lead">同一檔股票同時屬於多個分類,層級由細到粗。</p>
+
+    <div class="demo" aria-label="個股產業地圖示意">
+      <div class="demo-bar"><span>8299 群聯 <span class="tag">上櫃</span></span><span class="mono">1,245.00 +4.2%</span></div>
+      <div class="touch res">
+        <div><div class="t-name">自訂題材</div><div class="t-sub">記憶體模組 &nbsp; HBM &nbsp; NAND Flash</div></div>
+        <div class="t-right"><div class="t-price up">+3.1%</div><div class="t-pct">族群平均</div></div>
+      </div>
+      <div class="touch">
+        <div><div class="t-name">產業鏈細分類</div><div class="t-sub">半導體 / 記憶體 / 控制晶片</div></div>
+      </div>
+      <div class="touch">
+        <div><div class="t-name">官方類股</div><div class="t-sub">半導體業</div></div>
+      </div>
+      <div class="demo-note">畫面示意,非即時行情</div>
+    </div>
+
+    <ul>
+      <li><b>自訂題材(103 個):</b>市場實際在講的分類,像 ABF 載板、CPO 光通訊、玻璃基板、均熱片。<b>比官方產業別細得多</b>,也是最貼近短線題材輪動的一層。成分股依公開資訊觀測站的登記業務逐檔核對。</li>
+      <li><b>產業鏈細分類(512 類):</b>上中下游的細部分工,適合看供應鏈位置。</li>
+      <li><b>官方類股(47 類):</b>證交所的產業別,全台股都有,適合看大方向。</li>
+      <li><b>族群平均:</b>題材標籤旁的漲跌幅是該題材所有成分股的平均。<b>一檔股票漲、但它的題材平均在跌,代表是個股自己的事</b>,不是族群輪動。</li>
+      <li><b>點題材看成分股:</b>展開該題材的所有個股與當日表現,漲停會以淡紅底標示、跌停淡綠底。</li>
+    </ul>
+
+    <div class="tip">
+      <b>為什麼要分三層:</b>官方類股太粗——「半導體業」裡面有 IC 設計、晶圓代工、封測、設備,它們的漲跌原因完全不同。自訂題材才能回答「這一波是誰在動」。
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>產業鏈與今日熱門</h3>
+    <ul>
+      <li><b>產業鏈(14 條):</b>AI 伺服器、PCB 載板、半導體製造、記憶體、光通訊等,每條鏈分成數個環節。查個股時會標出它在哪一環,點環節可看同環節的其他公司。</li>
+      <li><b>今日題材漲幅排行:</b>搜尋頁預設顯示,依當日族群平均漲幅排序,可左右滑動看更多。</li>
+      <li><b>漲跌停鎖死:</b>當日鎖死的個股清單,漲停與跌停分開。盤中每 10 分鐘更新,打開的個股會從清單消失。</li>
+      <li><b>追蹤名單:</b>搜尋頁的追蹤名單存在裝置上,只是方便快速查詢,<b>與撐壓位的追蹤名單是兩份不同的清單</b>——後者才會觸發通知。</li>
+      <li><b>更新方式:</b>下拉可重新整理,切到別的分頁再回來也會自動更新。</li>
+    </ul>
+
+    <div class="tip">
+      <b>實戰用法:</b>收到資金流向的推播後,先來這裡查那檔股票屬於哪些題材、族群平均漲多少。<b>整個族群同步在漲,和單一個股獨漲,後續的發展通常不一樣。</b>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 分頁六:設定與推播 ========== -->
+<section id="settings">
+  <div class="sec-head">
+    <div class="sec-tag">分頁 06</div>
     <h2>設定與推播</h2>
     <p>訂閱狀態、裝置管理與通知都在這裡。</p>
   </div>
@@ -601,6 +751,16 @@ footer{padding:36px 0 20px;border-top:1px solid var(--line);color:var(--muted);f
     <div class="gitem"><dt>交界位</dt><dd>多空的中間參考位,價格在其之上偏強、之下偏弱。</dd></div>
     <div class="gitem"><dt>支撐位</dt><dd>往下的波動參考位,跌破代表短線轉弱。</dd></div>
     <div class="gitem"><dt>適用日期</dt><dd>該組撐壓位所對應的交易日。當日盤中不會變動。</dd></div>
+    <div class="gitem"><dt>突破 / 跌破</dt><dd>價格由下往上穿過為突破,由上往下為跌破。三條線各有兩個方向,共六種。</dd></div>
+    <div class="gitem"><dt>自訂題材</dt><dd>依市場實際說法整理的分類,例如 CPO 光通訊、玻璃基板。比官方產業別細,成分股依公開登記業務逐檔核對。</dd></div>
+    <div class="gitem"><dt>產業鏈</dt><dd>將題材依上中下游排列的結構,共 14 條。查個股時會標出它位在哪一個環節。</dd></div>
+    <div class="gitem"><dt>族群平均</dt><dd>某個題材所有成分股當日漲跌幅的平均。用來分辨是整個族群在動,還是單一個股。</dd></div>
+    <div class="gitem"><dt>隔日沖分點</dt><dd>依近 60 日的出清率與持有天數自動判定為短線進出的券商分點,名單會隨市場輪動更新。</dd></div>
+    <div class="gitem"><dt>出清率</dt><dd>某分點買進後隔日即賣出的比例。比例高代表其交易以隔日沖為主。</dd></div>
+    <div class="gitem"><dt>買超佔比</dt><dd>隔日沖分點的買超張數佔該股當日成交量的比例。佔比高代表成交有相當部分來自短線籌碼。</dd></div>
+    <div class="gitem"><dt>持續加碼</dt><dd>法人在該期間內淨買超,且買超天數超過期間的六成。</dd></div>
+    <div class="gitem"><dt>由買轉賣</dt><dd>整體仍是淨買超,但最近兩個交易日轉為賣超。通常是加碼段結束的訊號。</dd></div>
+    <div class="gitem"><dt>買超集中度</dt><dd>某題材的法人買超中,前二檔個股所佔的比例。高代表法人在挑個股,低代表在買整個族群。</dd></div>
   </dl>
 </section>
 
@@ -645,7 +805,7 @@ footer{padding:36px 0 20px;border-top:1px solid var(--line);color:var(--muted);f
 
   <details>
     <summary>資料多久更新一次?</summary>
-    <p>資金流向在盤中(09:00&ndash;13:30)每 5 分鐘更新一次。融資維持率是盤後公布的資料,每個交易日收盤後更新。撐壓位則是開盤前產生,當日盤中不變動。</p>
+    <p>資金流向在盤中(09:00&ndash;13:30)每 5 分鐘更新;撐壓位觸及每 3 分鐘掃描,於 13:24 截止(13:25 起為收盤試撮,揭示價非成交價);漲跌停清單盤中每 10 分鐘更新,15:10 以收盤資料定案;隔日沖籌碼 19:00 產出;三大法人 19:20 更新;融資維持率為盤後資料,收盤後更新。撐壓位的三條線則在開盤前產生,當日盤中不變動。</p>
   </details>
   <details>
     <summary>撐壓位盤中會不會變?</summary>
@@ -670,6 +830,26 @@ footer{padding:36px 0 20px;border-top:1px solid var(--line);color:var(--muted);f
   <details>
     <summary>可以同時在手機和平板使用嗎?</summary>
     <p>一組訂閱綁定一台裝置。若要換裝置,請到「設定」分頁執行裝置移轉。</p>
+  </details>
+  <details>
+    <summary>「我的追蹤」和搜尋頁的追蹤名單一樣嗎?</summary>
+    <p>不一樣,是兩份獨立的清單。撐壓位的「我的追蹤」存在伺服器上,會觸發觸及通知;產業搜尋的追蹤名單存在裝置上,只是方便快速查詢,不會通知。</p>
+  </details>
+  <details>
+    <summary>為什麼有些股票查不到撐壓位?</summary>
+    <p>前一日漲停或跌停鎖死的個股,最高等於最低等於收盤,振幅為零,算出來的三條線會全部等於收盤價,沒有參考價值,因此不產生點位。</p>
+  </details>
+  <details>
+    <summary>隔日沖名單為什麼顯示的是昨天的日期?</summary>
+    <p>這是刻意的。隔日沖是今天買、明天賣,籌碼資料又在收盤後 19:00 才產出,所以這份名單本來就是給下一個交易日看的——你要知道的是昨天有誰進場,今天才好觀察他們的出場。</p>
+  </details>
+  <details>
+    <summary>法人資料為什麼是前一天的?</summary>
+    <p>三大法人買賣超是收盤後才公布的資料,所以法人分頁永遠比盤中資料晚一天。它回答的是「昨天誰進場」,跟盤中的資金流向互補,不是同一件事。</p>
+  </details>
+  <details>
+    <summary>自訂題材和官方類股差在哪?</summary>
+    <p>官方類股是證交所的產業別,共 47 類,範圍較粗——「半導體業」裡面有 IC 設計、晶圓代工、封測、設備,漲跌原因各不相同。自訂題材共 103 個,依市場實際說法整理,適合看短線題材輪動。</p>
   </details>
   <details>
     <summary>App 會幫我下單嗎?</summary>
@@ -701,15 +881,16 @@ footer{padding:36px 0 20px;border-top:1px solid var(--line);color:var(--muted);f
 
     <div class="disclaimer">
       <h4>資料來源聲明</h4>
-      <p>本網站及應用程式使用之台股資料來自<a href="https://openapi.twse.com.tw/">臺灣證券交易所</a>與<a href="https://www.tpex.org.tw/openapi/">證券櫃檯買賣中心</a>公開開放資料,依「<a href="https://data.gov.tw/license">政府資料開放授權條款－第1版</a>」授權使用。</p>
-      <p>本服務所提供之分析結果為衍生創作,僅供投資研究參考,不構成任何投資建議。App 內所示之撐壓位為波動參考位,非進出場訊號。投資人應自行審慎評估投資風險,所衍生之一切盈虧均由使用者自行承擔。</p>
+      <p>本網站及應用程式使用之台股資料來自<a href="https://openapi.twse.com.tw/">臺灣證券交易所</a>與<a href="https://www.tpex.org.tw/openapi/">證券櫃檯買賣中心</a>公開開放資料,依「<a href="https://data.gov.tw/license">政府資料開放授權條款－第1版</a>」授權使用。部分資料由 FinMind 提供。</p>
+      <p>本服務所提供之題材分類、統計與分析結果,係依公開資訊整理計算之衍生創作,僅供投資研究參考,不構成任何投資建議或買賣要約。App 內所示之撐壓位為波動參考位,非進出場訊號;融資維持率為估算值,不等同券商帳戶之實際維持率;隔日沖籌碼為結構描述,不預測後續走勢。投資人應自行審慎評估投資風險,所衍生之一切盈虧均由使用者自行承擔。</p>
+      <p>本頁所示之股票代號、價格與金額均為畫面示意,非即時行情。</p>
     </div>
 
     <p class="copy">&copy; 2026 Crypto_Judge &middot; 即時資金雷達 Smart Money Radar</p>
   </div>
 </footer>
 
-<!-- ========== 底部分頁列(對應 App 的五個分頁) ========== -->
+<!-- ========== 底部分頁列(對應 App 的六個分頁) ========== -->
 <nav class="tabbar" aria-label="教學章節導覽">
   <div class="tabbar-inner">
     <a class="tab" href="#flow" data-target="flow">
@@ -720,13 +901,17 @@ footer{padding:36px 0 20px;border-top:1px solid var(--line);color:var(--muted);f
       <svg viewBox="0 0 24 24"><path d="M3 7l6 6 4-4 8 8"/><path d="M21 18v-5h-5"/></svg>
       <span>融資</span>
     </a>
+    <a class="tab" href="#inst" data-target="inst">
+      <svg viewBox="0 0 24 24"><path d="M3 21h18"/><path d="M5 21V10"/><path d="M19 21V10"/><path d="M9 21v-6h6v6"/><path d="M12 3l9 6H3l9-6z"/></svg>
+      <span>法人</span>
+    </a>
     <a class="tab" href="#levels" data-target="levels">
       <svg viewBox="0 0 24 24"><path d="M9 4v16"/><path d="M6 7l3-3 3 3"/><path d="M15 20V4"/><path d="M12 17l3 3 3-3"/></svg>
       <span>撐壓位</span>
     </a>
     <a class="tab" href="#search" data-target="search">
       <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
-      <span>搜尋</span>
+      <span>產業搜尋</span>
     </a>
     <a class="tab" href="#settings" data-target="settings">
       <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 11-4 0v-.09A1.65 1.65 0 008 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 11-2.83-2.83l.06-.06A1.65 1.65 0 004.6 15a1.65 1.65 0 00-1.51-1H3a2 2 0 110-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06A1.65 1.65 0 009 4.6a1.65 1.65 0 001-1.51V3a2 2 0 114 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 112.83 2.83l-.06.06A1.65 1.65 0 0019.4 9v0a1.65 1.65 0 001.51 1H21a2 2 0 110 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
