@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>即時資金雷達 - Smart Money Radar｜即時追蹤台股資金流向</title>
-<meta name="description" content="即時資金雷達 — 資金流向、融資維持率、個股撐壓位，掌握台股三大關鍵，讓你搶先市場一步。">
+<meta name="description" content="即時資金雷達 — 資金流向、產業地圖、撐壓位、隔日沖籌碼、三大法人、融資維持率，六個角度看同一檔股票。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Bebas+Neue&display=swap" rel="stylesheet">
 <style>
@@ -394,6 +394,19 @@
     line-height: 1.75;
   }
 
+  /* 功能卡片的補充說明。講的是這個數字該怎麼讀，
+     而不只是列出功能有什麼 —— 開課講解時這段就是重點。 */
+  .feature-note {
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(245,200,66,0.12);
+    font-size: 0.82rem;
+    line-height: 1.7;
+    color: #7D7465;
+  }
+
+  .feature-note b { color: var(--text-muted); font-weight: 500; }
+
   /* ── STATS ── */
   .stats {
     padding: 80px 0;
@@ -431,9 +444,61 @@
     letter-spacing: 0.06em;
   }
 
+  /* ── 一個交易日 ── */
+  .day {
+    padding: 100px 0;
+  }
+
+  .day-header { text-align: center; margin-bottom: 60px; }
+  .day-header .section-desc { margin: 0 auto; }
+
+  .day-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+  }
+
+  .day-card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 32px 28px;
+  }
+
+  .day-card h3 { font-size: 1.15rem; font-weight: 800; margin-bottom: 4px; }
+
+  .day-card .day-time {
+    font-size: 0.8rem;
+    color: var(--gold);
+    letter-spacing: 0.06em;
+    margin-bottom: 20px;
+  }
+
+  .day-card ul { list-style: none; }
+
+  .day-card li {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 1.7;
+    padding: 8px 0 8px 18px;
+    position: relative;
+  }
+
+  .day-card li::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 16px;
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: rgba(245,200,66,0.5);
+  }
+
   /* ── HOW ── */
   .how {
     padding: 100px 0;
+    background: var(--bg2);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
   }
 
   .how-inner {
@@ -470,7 +535,7 @@
   .step-content p { color: var(--text-muted); font-size: 0.9rem; line-height: 1.7; }
 
   .how-visual {
-    background: var(--bg2);
+    background: var(--bg3);
     border: 1px solid var(--border);
     border-radius: 20px;
     padding: 40px 32px;
@@ -505,7 +570,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: var(--bg3);
+    background: var(--bg);
     border-radius: 10px;
     padding: 14px 18px;
     border-left: 3px solid transparent;
@@ -527,8 +592,6 @@
   /* ── PRICING ── */
   .pricing {
     padding: 100px 0;
-    background: var(--bg2);
-    border-top: 1px solid var(--border);
   }
 
   .pricing-header { text-align: center; margin-bottom: 64px; }
@@ -543,7 +606,7 @@
   }
 
   .plan {
-    background: var(--bg3);
+    background: var(--bg2);
     border: 1px solid var(--border);
     border-radius: 18px;
     padding: 40px 32px;
@@ -555,7 +618,7 @@
 
   .plan.featured {
     border-color: var(--gold);
-    background: linear-gradient(160deg, rgba(245,200,66,0.06), var(--bg3));
+    background: linear-gradient(160deg, rgba(245,200,66,0.06), var(--bg2));
   }
 
   .plan-badge {
@@ -643,6 +706,8 @@
   .cta-section {
     padding: 100px 0;
     text-align: center;
+    background: var(--bg2);
+    border-top: 1px solid var(--border);
   }
 
   .cta-inner {
@@ -735,6 +800,7 @@
     display: flex;
     gap: 28px;
     list-style: none;
+    flex-wrap: wrap;
   }
 
   .footer-links a {
@@ -810,6 +876,7 @@
     .stat-item { border-right: none; border-bottom: 1px solid var(--border); }
     .stat-item:last-child { border-bottom: none; }
     .footer-inner { flex-direction: column; text-align: center; }
+    .footer-links { justify-content: center; }
   }
 </style>
   <link rel="icon" type="image/png" href="favicon.png">
@@ -822,7 +889,7 @@
   <a class="nav-logo" href="#">⚡ 即時資金雷達 <span style="color:var(--text-muted);font-weight:400;font-size:0.8rem;">Smart Money Radar</span></a>
   <ul class="nav-links">
     <li><a href="#features">功能特色</a></li>
-    <li><a href="#how">使用方式</a></li>
+    <li><a href="#day">一天怎麼用</a></li>
     <li><a href="guide.html">使用教學</a></li>
     <li><a href="#pricing">訂閱方案</a></li>
   </ul>
@@ -849,7 +916,7 @@
   </p>
 
   <div class="hero-pillars">
-    <span>資金流向</span><i>×</i><span>融資籌碼</span><i>×</i><span>撐壓價位</span>
+    <span>資金流向</span><i>×</i><span>產業地圖</span><i>×</i><span>籌碼分析</span><i>×</i><span>撐壓價位</span>
   </div>
 
   <div class="hero-btns">
@@ -898,9 +965,10 @@
   <div class="container">
     <div class="features-header">
       <p class="section-label">功能特色</p>
-      <h2 class="section-title">你需要的<br>全部都在這裡</h2>
+      <h2 class="section-title">同一檔股票<br>六個角度一起看</h2>
       <p class="section-desc">
-        資金往哪裡去、融資籌碼有沒有危險、關鍵價位在哪裡 —— 台股三大關鍵，一個 App 全部掌握。
+        資金往哪裡去、它屬於哪個族群、關鍵價位在哪、誰在買、法人怎麼動、籌碼安不安全。
+        六件事分開看都只是片段，放在一起才看得出全貌。
       </p>
     </div>
 
@@ -908,34 +976,68 @@
       <div class="feature-card">
         <div class="feature-icon">⚡</div>
         <h3>即時資金流向</h3>
-        <p>盤中每5分鐘更新一次全市場資金動態，1,947檔個股即時監控，資金異動超過門檻即時推播通知。</p>
+        <p>盤中每 5 分鐘掃描全市場 2,525 檔，把成交金額依題材與產業彙整，算出各族群的淨流入流出與資金集中度，達到門檻即推播，分緊急、重要、一般三級。</p>
+        <p class="feature-note"><b>怎麼看：</b>淨額看方向，集中度看是整個族群在動，還是少數幾檔在撐。</p>
       </div>
+
+      <div class="feature-card is-new">
+        <span class="new-tag">NEW</span>
+        <div class="feature-icon">🗺️</div>
+        <h3>產業地圖</h3>
+        <p>搜尋任一檔個股，看見它屬於哪些題材、位在產業鏈的哪一環，以及上下游族群當天的資金動向。自訂題材超過 100 個，從 ABF 載板、CPO 光通訊到玻璃基板，另有 512 個產業鏈細分類與官方類股。</p>
+        <p class="feature-note"><b>怎麼看：</b>題材是市場實際在講的分類，比官方產業別細得多。一檔股票通常同時屬於多個題材，看哪個題材在動，才知道它為什麼漲。</p>
+      </div>
+
       <div class="feature-card">
         <div class="feature-icon">📡</div>
         <h3>類股雷達與排行</h3>
-        <p>依TWSE/TPEx官方產業分類彙整30+類股資金淨流入／流出，並提供當日資金流入流出前50名個股排行，一眼看出板塊輪動方向。</p>
+        <p>依 TWSE／TPEx 官方產業分類彙整類股資金淨流入／流出，並提供當日資金流入流出前 50 名個股排行，一眼看出板塊輪動方向。</p>
+        <p class="feature-note"><b>怎麼看：</b>官方類股適合看大方向，自訂題材適合看短線輪動，兩者搭配使用。</p>
       </div>
-      <div class="feature-card is-new">
-        <span class="new-tag">NEW</span>
-        <div class="feature-icon">📉</div>
-        <h3>融資維持率</h3>
-        <p>上市櫃整體維持率、警戒檔數與融資餘額增減一次掌握。個股可查維持率、距警戒距離與當日融資增減，避開逼近追繳線的危險籌碼。</p>
-      </div>
+
       <div class="feature-card is-new">
         <span class="new-tag">NEW</span>
         <div class="feature-icon">⚖️</div>
-        <h3>個股撐壓位</h3>
-        <p>每日自動產生壓力位、交界位、支撐位三道波動參考線，開盤前就固定不變動。盤中觸及自動記錄並附上量能，讓你提前擬好交易計畫。</p>
+        <h3>撐壓位與追蹤名單</h3>
+        <p>依前一日振幅算出壓力位、支撐位與交界位，開盤前就固定不動。盤中穿越任一條線即記錄並推播，分為突破壓力、跌破壓力、跌破支撐、突破支撐、上穿交界、下穿交界六種。想盯的個股可加入追蹤名單，追蹤標的不受成交量門檻限制。</p>
+        <p class="feature-note"><b>怎麼看：</b>這三條線是波動參考位，不是進出場訊號。用途是開盤前先知道今天大概在哪個區間動，好提前把計畫想清楚。</p>
       </div>
+
+      <div class="feature-card is-new">
+        <span class="new-tag">NEW</span>
+        <div class="feature-icon">🔥</div>
+        <h3>隔日沖籌碼分析</h3>
+        <p>收盤後彙整券商分點資料，找出漲停鎖死個股裡隔日沖分點的買超，列出是哪幾家、買了多少張、佔當日成交量多少比例。分點是否屬於隔日沖，由近 60 日的出清率與持有天數自動判定。</p>
+        <p class="feature-note"><b>怎麼看：</b>佔比高代表這檔成交有相當比例來自隔日沖，隔天賣壓的來源比較清楚。這是籌碼結構的描述，不預測隔天走勢。</p>
+      </div>
+
+      <div class="feature-card is-new">
+        <span class="new-tag">NEW</span>
+        <div class="feature-icon">🏦</div>
+        <h3>三大法人題材排行</h3>
+        <p>三大法人買賣超依題材聚合，以金額計價。分成持續加碼、由買轉賣、持續減碼三組，可切換當日、近 5 日、近 20 日，外資與投信分開顯示。</p>
+        <p class="feature-note"><b>怎麼看：</b>法人動作本來就慢，20 日的持續性比單日金額有意義。外資買而投信賣值得特別注意，那種分歧在合計數字裡看不到。</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">📉</div>
+        <h3>融資維持率</h3>
+        <p>上市櫃整體維持率、警戒檔數與融資餘額增減一次掌握。個股可查維持率、距警戒距離與當日融資增減，避開逼近追繳線的危險籌碼。</p>
+        <p class="feature-note"><b>怎麼看：</b>維持率為估算值，依公開融資餘額與成交均價推算，不等同券商帳戶的實際維持率。用途是辨識籌碼風險偏高的個股。</p>
+      </div>
+
       <div class="feature-card">
         <div class="feature-icon">🔔</div>
         <h3>智慧推播提醒</h3>
-        <p>系統內建偵測條件，資金異動與價位觸及訊號自動觸發推播通知，無需手動設定，不再錯過任何重要機會。</p>
+        <p>系統內建偵測條件，資金異動與價位穿越訊號自動觸發推播，無需手動設定，不再錯過任何重要機會。</p>
+        <p class="feature-note"><b>怎麼看：</b>追蹤名單的通知不設成交量門檻，碰到點位就通知；一般觸及清單有量能條件，以減少雜訊。</p>
       </div>
+
       <div class="feature-card">
         <div class="feature-icon">🔍</div>
         <h3>個股訊號搜尋</h3>
-        <p>輸入股票代號或名稱，即時查看該股當日資金流入／流出訊號、流入金額與漲跌幅，掌握主力動向。</p>
+        <p>輸入股票代號或名稱，查看該股當日資金流入／流出訊號、流入金額與漲跌幅，並可切換查看融資維持率與當日撐壓位。</p>
+        <p class="feature-note"><b>怎麼看：</b>從搜尋進去可一路看到所屬題材，再從題材跳到整個族群，動線是雙向的。</p>
       </div>
     </div>
   </div>
@@ -946,7 +1048,7 @@
   <div class="container">
     <div class="stats-grid">
       <div class="stat-item">
-        <div class="stat-num">1,947</div>
+        <div class="stat-num">2,525</div>
         <div class="stat-label">監控個股數</div>
       </div>
       <div class="stat-item">
@@ -954,12 +1056,16 @@
         <div class="stat-label">盤中更新頻率</div>
       </div>
       <div class="stat-item">
-        <div class="stat-num">1,224<span style="font-size:1.5rem;">檔</span></div>
-        <div class="stat-label">融資籌碼監控</div>
+        <div class="stat-num">103<span style="font-size:1.5rem;">個</span></div>
+        <div class="stat-label">自訂題材分類</div>
       </div>
       <div class="stat-item">
-        <div class="stat-num">3<span style="font-size:1.5rem;">道</span></div>
-        <div class="stat-label">每日撐壓參考位</div>
+        <div class="stat-num">512<span style="font-size:1.5rem;">類</span></div>
+        <div class="stat-label">產業鏈細分類</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">6<span style="font-size:1.5rem;">種</span></div>
+        <div class="stat-label">價位穿越型態</div>
       </div>
       <div class="stat-item">
         <div class="stat-num">100<span style="font-size:1.5rem;">億+</span></div>
@@ -1006,11 +1112,13 @@
     <div style="display:flex; justify-content:center; gap:16px; margin-top:24px; flex-wrap:wrap;">
       <span style="color:#C88600; font-size:0.85rem;">⚡ 5分鐘即時通知</span>
       <span style="color:#555;">|</span>
-      <span style="color:#C88600; font-size:0.85rem;">📊 1947檔個股監控</span>
+      <span style="color:#C88600; font-size:0.85rem;">📊 2,525檔個股監控</span>
       <span style="color:#555;">|</span>
-      <span style="color:#C88600; font-size:0.85rem;">📉 融資維持率</span>
+      <span style="color:#C88600; font-size:0.85rem;">🗺️ 產業地圖</span>
       <span style="color:#555;">|</span>
-      <span style="color:#C88600; font-size:0.85rem;">⚖️ 個股撐壓位</span>
+      <span style="color:#C88600; font-size:0.85rem;">🔥 隔日沖籌碼</span>
+      <span style="color:#555;">|</span>
+      <span style="color:#C88600; font-size:0.85rem;">🏦 三大法人</span>
     </div>
   </div>
 </section>
@@ -1034,6 +1142,54 @@
   window.addEventListener('resize',update);
 })();
 </script>
+
+<!-- 一個交易日怎麼用 -->
+<section class="day" id="day">
+  <div class="container">
+    <div class="day-header">
+      <p class="section-label">使用時機</p>
+      <h2 class="section-title">一個交易日怎麼用</h2>
+      <p class="section-desc">
+        六個功能的更新時間不同，用途也不同。照時間軸使用會順很多。
+      </p>
+    </div>
+
+    <div class="day-grid">
+      <div class="day-card">
+        <h3>盤前</h3>
+        <p class="day-time">開盤前</p>
+        <ul>
+          <li>看撐壓位，知道今天關注的個股大概在哪個區間動</li>
+          <li>看法人近 20 日在加碼哪些題材</li>
+          <li>看昨天的隔日沖名單，今天是他們的出場日</li>
+          <li>把想盯的個股加入追蹤名單</li>
+        </ul>
+      </div>
+
+      <div class="day-card">
+        <h3>盤中</h3>
+        <p class="day-time">09:00 — 13:30</p>
+        <ul>
+          <li>資金流向每 5 分鐘更新，有異動就推播</li>
+          <li>撐壓位每 3 分鐘掃描，穿越點位即時通知</li>
+          <li>追蹤名單的個股不限成交量，碰到就通知</li>
+          <li>收到訊號後查產業地圖，確認是整個族群在動還是單一個股</li>
+        </ul>
+      </div>
+
+      <div class="day-card">
+        <h3>盤後</h3>
+        <p class="day-time">15:00 之後</p>
+        <ul>
+          <li>15:10 漲跌停鎖死清單定案</li>
+          <li>19:00 隔日沖籌碼分析產出</li>
+          <li>19:20 三大法人買賣超更新</li>
+          <li>檢視今天的穿越紀錄，隔日清除</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- HOW IT WORKS -->
 <section class="how" id="how">
@@ -1067,18 +1223,18 @@
           <div class="step">
             <div class="step-num">03</div>
             <div class="step-content">
-              <h4>即時掌握動向</h4>
-              <p>收到推播後開啟 App，查看當日資金流入流出排行與類股輪動。例如：<br>
-              <strong style="color:#F5C842">09:35</strong> <strong style="color:#fff">2330 台積電</strong> ｜ 現價 <strong style="color:#E74C3C">945元</strong> ↑ 3.42% 流入 <strong style="color:#E74C3C">+155億</strong><br>
-              快速判斷市場強弱，掌握主力動向。</p>
+              <h4>確認是誰在動</h4>
+              <p>收到推播後開啟 App，先查產業地圖確認這檔屬於哪些題材、整個族群是不是都在漲，<br>
+              再看三大法人近 20 日有沒有在加碼同一個題材。<br>
+              單一個股獨漲和整個族群同步，意義完全不同。</p>
             </div>
           </div>
           <div class="step">
             <div class="step-num">04</div>
             <div class="step-content">
               <h4>確認籌碼與關鍵價位</h4>
-              <p>進場前再多看兩眼：切到「融資」確認維持率離追繳線還有多遠，再到「撐壓位」看壓力位、交界位與支撐位。<br>
-              籌碼安全、價位清楚，才知道停損停利該擺在哪。</p>
+              <p>進場前再多看兩眼：切到「融資」確認維持率離追繳線還有多遠，看「隔日沖」有沒有大量當沖籌碼，再到「撐壓位」看今天的三道參考線。<br>
+              籌碼清楚、價位明確，才知道停損停利該擺在哪。</p>
             </div>
           </div>
         </div>
@@ -1150,7 +1306,7 @@
       <p class="section-label">訂閱方案</p>
       <h2 class="section-title">選擇適合你的方案</h2>
       <p class="section-desc">
-        三種方案功能完全相同，差別只在期間長度。解鎖全市場即時資金資料、融資籌碼監控與每日撐壓位。
+        三種方案功能完全相同，差別只在期間長度。解鎖全市場即時資金資料、產業地圖、籌碼分析與每日撐壓位。
       </p>
     </div>
 
@@ -1161,11 +1317,11 @@
         <div class="plan-period">每月 / 台幣</div>
         <ul class="plan-features">
           <li>全市場即時資金流向</li>
-          <li>盤中每5分鐘即時推播訊號</li>
-          <li>個股當日資金訊號搜尋</li>
-          <li>類股資金輪動追蹤</li>
+          <li>產業地圖與題材查詢</li>
+          <li>撐壓位與追蹤名單通知</li>
+          <li>隔日沖籌碼分析</li>
+          <li>三大法人題材排行</li>
           <li>融資維持率與警示清單</li>
-          <li>每日個股撐壓位</li>
           <li>無限制推播通知</li>
         </ul>
         <a href="#" class="plan-btn outline">立即訂閱</a>
@@ -1178,11 +1334,11 @@
         <div class="plan-period">每季（3個月）/ 台幣</div>
         <ul class="plan-features">
           <li>全市場即時資金流向</li>
-          <li>盤中每5分鐘即時推播訊號</li>
-          <li>個股當日資金訊號搜尋</li>
-          <li>類股資金輪動追蹤</li>
+          <li>產業地圖與題材查詢</li>
+          <li>撐壓位與追蹤名單通知</li>
+          <li>隔日沖籌碼分析</li>
+          <li>三大法人題材排行</li>
           <li>融資維持率與警示清單</li>
-          <li>每日個股撐壓位</li>
           <li>無限制推播通知</li>
         </ul>
         <a href="#" class="plan-btn gold">立即訂閱</a>
@@ -1194,11 +1350,11 @@
         <div class="plan-period">每年 / 台幣（省20%）</div>
         <ul class="plan-features">
           <li>全市場即時資金流向</li>
-          <li>盤中每5分鐘即時推播訊號</li>
-          <li>個股當日資金訊號搜尋</li>
-          <li>類股資金輪動追蹤</li>
+          <li>產業地圖與題材查詢</li>
+          <li>撐壓位與追蹤名單通知</li>
+          <li>隔日沖籌碼分析</li>
+          <li>三大法人題材排行</li>
           <li>融資維持率與警示清單</li>
-          <li>每日個股撐壓位</li>
           <li>無限制推播通知</li>
         </ul>
         <a href="#" class="plan-btn outline">立即訂閱</a>
@@ -1241,6 +1397,7 @@
       <div class="footer-brand">⚡ 即時資金雷達</div>
       <ul class="footer-links">
         <li><a href="#features">功能介紹</a></li>
+        <li><a href="#day">一天怎麼用</a></li>
         <li><a href="guide.html">使用教學</a></li>
         <li><a href="#pricing">訂閱方案</a></li>
         <li><a href="https://crypto-judge.github.io/privacy-policy/" target="_blank">隱私政策</a></li>
@@ -1254,10 +1411,13 @@
         本網站及應用程式使用之台股資料來自
         <a href="https://openapi.twse.com.tw/" target="_blank">臺灣證券交易所</a> 與
         <a href="https://www.tpex.org.tw/openapi/" target="_blank">證券櫃檯買賣中心</a>
-        公開開放資料，依「<a href="https://data.gov.tw/license" target="_blank">政府資料開放授權條款－第1版</a>」授權使用。
+        公開開放資料，依「<a href="https://data.gov.tw/license" target="_blank">政府資料開放授權條款－第1版</a>」授權使用。部分資料由 FinMind 提供。
       </p>
       <p class="footer-disclaimer-text">
-        本服務所提供之分析結果為衍生創作，僅供投資研究參考，不構成任何投資建議。App 內所示之撐壓位為波動參考位，非進出場訊號。投資人應自行審慎評估投資風險，所衍生之一切盈虧均由使用者自行承擔。
+        本服務所提供之題材分類、統計與分析結果，係依公開資訊整理計算之衍生創作，僅供投資研究參考，不構成任何投資建議或買賣要約。App 內所示之撐壓位為波動參考位，非進出場訊號；融資維持率為估算值，不等同券商帳戶之實際維持率。投資人應自行審慎評估投資風險，所衍生之一切盈虧均由使用者自行承擔。
+      </p>
+      <p class="footer-disclaimer-text">
+        本頁所示之股票代號、價格與金額均為畫面示意，非即時行情。
       </p>
     </div>
 
